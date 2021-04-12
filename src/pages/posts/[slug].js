@@ -55,8 +55,6 @@ export default function Post({ post, blocks }) {
   const titleToShare = `${post.title} by Mauricio R. Duarte<@mauriciord>`;
   const urlToShare = `${metaData.url}/${post.slug}`;
 
-  console.log('URL TO SHARE ___', { urlToShare });
-
   return (
     <Home>
       <MetaHead

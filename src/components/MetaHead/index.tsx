@@ -1,11 +1,13 @@
 import Head from 'next/head';
 
 export default function MetaHead({ title, description, url, image }) {
+  const imageUrl = `${url}${image}`;
   return (
     <Head>
       <title>{title}</title>
       <meta name="title" content={title} />
       <meta name="description" content={description} />
+      <meta name="image" content={imageUrl} />
 
       <meta httpEquiv="x-ua-compatible" content="IE=edge,chrome=1" />
       <meta name="MobileOptimized" content="320" />
