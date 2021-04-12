@@ -52,8 +52,8 @@ export async function getStaticPaths() {
 }
 
 export default function Post({ post, blocks }) {
+  const urlToShare = `${metaData.url}/posts/${post.slug}`;
   const titleToShare = `${post.title} by Mauricio R. Duarte<@mauriciord>`;
-  const urlToShare = `${metaData.url}/${post.slug}`;
 
   return (
     <Home>
