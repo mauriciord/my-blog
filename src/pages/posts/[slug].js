@@ -1,4 +1,10 @@
 import { NotionRenderer } from 'react-notion';
+import {
+  FacebookIcon,
+  FacebookShareButton,
+  TwitterIcon,
+  TwitterShareButton,
+} from 'next-share';
 
 import Home from '../../containers/Home';
 import { getAllPosts } from '../index';
@@ -6,7 +12,7 @@ import MetaHead from '../../components/MetaHead';
 // import PostContent from "../../components/PostContent";
 import PostTitle from '../../components/PostTitle';
 import PostDetails from '../../components/PostDetails';
-import PostCoverImage from '../../components/PostCoverImage';
+// import PostCoverImage from '../../components/PostCoverImage';
 import metaData from '../../lib/data';
 import { isNotADraft } from '../../utils';
 
@@ -44,6 +50,9 @@ export async function getStaticPaths() {
 }
 
 export default function Post({ post, blocks }) {
+  const titleToShare = `${post.title} by Mauricio R. Duarte<@mauriciord>`;
+  const urlToShare = `${metaData.url}/${post.slug}`;
+
   return (
     <Home>
       <MetaHead
@@ -56,6 +65,15 @@ export default function Post({ post, blocks }) {
         <div className="flex flex-col my-6 space-y-3">
           <PostTitle title={post.title} />
           <PostDetails author={post.author} date={post.date} />
+          <div className="py-4 space-x-4 flex items-center">
+            <p>Share:</p>
+            <FacebookShareButton url={urlToShare} quote={titleToShare}>
+              <FacebookIcon size={40} round />
+            </FacebookShareButton>
+            <TwitterShareButton url={urlToShare} title={titleToShare}>
+              <TwitterIcon size={40} round />
+            </TwitterShareButton>
+          </div>
           <NotionRenderer blockMap={blocks} />
         </div>
       </article>
