@@ -58,7 +58,7 @@ export default function Post({ post, blocks }) {
   return (
     <Home>
       <MetaHead
-        title={metaData.title}
+        title={post.title}
         description={metaData.description}
         url={metaData.url}
         image={metaData.image}
