@@ -4,7 +4,9 @@ import {
   FacebookShareButton,
   TwitterIcon,
   TwitterShareButton,
-} from 'next-share';
+  LinkedinIcon,
+  LinkedinShareButton,
+} from 'react-share';
 
 import Home from '../../containers/Home';
 import { getAllPosts } from '../index';
@@ -53,6 +55,8 @@ export default function Post({ post, blocks }) {
   const titleToShare = `${post.title} by Mauricio R. Duarte<@mauriciord>`;
   const urlToShare = `${metaData.url}/${post.slug}`;
 
+  console.log('URL TO SHARE ___', { urlToShare });
+
   return (
     <Home>
       <MetaHead
@@ -73,6 +77,9 @@ export default function Post({ post, blocks }) {
             <TwitterShareButton url={urlToShare} title={titleToShare}>
               <TwitterIcon size={40} round />
             </TwitterShareButton>
+            <LinkedinShareButton url={urlToShare} title={titleToShare}>
+              <LinkedinIcon size={40} round />
+            </LinkedinShareButton>
           </div>
           <NotionRenderer blockMap={blocks} />
         </div>
