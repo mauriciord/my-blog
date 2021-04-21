@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+  <feed xmlns="http://www.w3.org/2005/Atom">
+    <title>My Blog</title>
+    <subtitle>Blog</subtitle>
+    <link href="/atom" rel="self" type="application/rss+xml"/>
+    <link href="/" />
+    <updated>2021-04-21T02:38:20.920Z</updated>
+    <id>My Notion Blog</id>
+    <entry>
+      <id>/posts/books-list-2021</id>
+      <title>Books that I want to read in 2021</title>
+      <link href="/posts/books-list-2021"/>
+      <updated>2021-04-19T03:00:00.684Z</updated>
+      <content type="xhtml">
+        <div xmlns="http://www.w3.org/1999/xhtml">
+          <p>Testing the preview : ]</p>
+          <p class="more">
+            <a href="/posts/books-list-2021">Read more</a>
+          </p>
+        </div>
+      </content>
+      <author><name>Maurício Reatto Duarte</name></author>
+    </entry>
+  </feed>
